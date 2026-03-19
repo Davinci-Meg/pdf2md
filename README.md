@@ -1,6 +1,6 @@
 # :page_facing_up: pdf2md
 
-PDFファイルを図版付きの高品質なMarkdownに変換する Claude Code スキル。
+PDFファイルを図版付きの高品質なMarkdownに変換する Claude Code スキル。PDFファイル名のフォルダに出力。
 
 ![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-blueviolet?logo=anthropic)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
@@ -20,10 +20,12 @@ PDFファイルを図版付きの高品質なMarkdownに変換する Claude Code
 ## :package: 出力
 
 ```
-<PDFと同じディレクトリ>/<論文タイトル>/
+<PDFと同じディレクトリ>/<PDFファイル名>/
 ├── images/        — PDFから抽出した図表画像
 └── paper.md       — Markdown 変換（画像埋め込み）
 ```
+
+例: `attention_is_all_you_need.pdf` → `attention_is_all_you_need/paper.md`
 
 ## :wrench: インストール
 
@@ -86,7 +88,7 @@ Claude Code を起動して `/pdf2md` を実行：
 ## :building_construction: 処理フロー
 
 1. **Step 0** — PDFファイルの特定
-2. **Step 1** — 出力フォルダの作成（論文タイトル名）
+2. **Step 1** — 出力フォルダの作成（PDFファイル名）
 3. **Step 1.5** — PDFから図版を抽出（`DocLayout-YOLO`）
 4. **Step 2** — PDFをセクション構造付きMarkdownに変換（画像埋め込み）
 5. **Step 3** — 完了報告

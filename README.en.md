@@ -1,6 +1,6 @@
 # :page_facing_up: pdf2md
 
-A Claude Code skill that converts PDF files into high-quality Markdown with automatic figure extraction.
+A Claude Code skill that converts PDF files into high-quality Markdown with automatic figure extraction. Outputs to a folder named after the PDF file.
 
 ![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-blueviolet?logo=anthropic)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
@@ -20,10 +20,12 @@ A Claude Code skill that converts PDF files into high-quality Markdown with auto
 ## :package: Output
 
 ```
-<same directory as PDF>/<paper title>/
+<same directory as PDF>/<PDF filename>/
 ├── images/        — Figures extracted from the PDF
 └── paper.md       — Markdown conversion (with embedded figures)
 ```
+
+Example: `attention_is_all_you_need.pdf` → `attention_is_all_you_need/paper.md`
 
 ## :wrench: Installation
 
@@ -85,7 +87,7 @@ Launch Claude Code and run `/pdf2md`:
 ## :building_construction: How It Works
 
 1. **Step 0** — Identify PDF files
-2. **Step 1** — Create output folder (named after paper title)
+2. **Step 1** — Create output folder (named after PDF file)
 3. **Step 1.5** — Extract figures from PDF (`DocLayout-YOLO`)
 4. **Step 2** — Convert PDF to Markdown with section structure (with embedded figures)
 5. **Step 3** — Completion report
